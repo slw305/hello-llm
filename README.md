@@ -14,7 +14,19 @@
 - Day14 带记忆对话助手(手动记忆)
 - Day15 add工具+agent跑通
 - Day16 术语解释器+复盘推GitHub
-
+- Day17-23 RAG全流程、Chroma检索、LangSmith调试
+- ```mermaid
+flowchart LR
+    A[文档] --> B[加载 Document]
+    B --> C[分块 chunk_size=500]
+    C --> D[向量化 BGE]
+    D --> E[(Chroma 向量库)]
+    F[问题] --> G[向量化]
+    G --> H[相似度检索 k=3]
+    E --> H
+    H --> I[拼 context 进 prompt]
+    I --> J[DeepSeek 回答]
+```
 ## 环境
 Python 3.13 + uv 管理依赖（依赖在 pyproject.toml / uv.lock）
 
